@@ -50,5 +50,46 @@ namespace PrimeTool
 
             return true;
         } // Check if number is prime
+
+        private void ButtonBruteForce_Click(object sender, EventArgs e)
+        {
+            int[] crackResult = CrackProduct(Convert.ToInt64(textBoxPrimeToForce.Text));
+
+            textBoxFactor1.Text = crackResult[0].ToString();
+            textBoxFactor2.Text = crackResult[1].ToString();
+        }
+
+        private int[] CrackProduct(long product)
+        {
+            int factor1 = 1;
+            long factorCeiling;
+            if (textBoxFactorCeiling.Text == "")
+            {
+                factorCeiling = product;
+            }
+            else
+            {
+                factorCeiling = Convert.ToInt64(textBoxFactorCeiling.Text);
+            }
+            while (factor1 < factorCeiling)
+            {
+                while (!isPrime(factor1))
+                {
+                    factor1++;
+                }
+
+                for (int factor2 = 0; factor2 < factor1; factor2++)
+                {
+                    if (isPrime(factor2) && factor1 * factor2 == product)
+                    {
+                        return new int[] { factor1, factor2 };
+                    }
+                }
+
+                factor1++;
+            }
+
+            return new int[] { 0, 0 };
+        } // find factors (using bruteforcing) based on the product of two primes.
     }
 }

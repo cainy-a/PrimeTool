@@ -40,9 +40,18 @@
             this.buttonCheckPrime = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxIsPrime = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxPrimeToForce = new System.Windows.Forms.TextBox();
+            this.buttonBruteForce = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxFactor1 = new System.Windows.Forms.TextBox();
+            this.textBoxFactor2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxFactorCeiling = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -53,7 +62,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(612, 367);
+            this.tabControl1.Size = new System.Drawing.Size(612, 253);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -64,7 +73,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(604, 341);
+            this.tabPage1.Size = new System.Drawing.Size(604, 229);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -79,7 +88,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(604, 341);
+            this.tabPage2.Size = new System.Drawing.Size(604, 227);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Prime Checker";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -117,9 +126,17 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.textBoxFactorCeiling);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.textBoxFactor2);
+            this.tabPage3.Controls.Add(this.textBoxFactor1);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.buttonBruteForce);
+            this.tabPage3.Controls.Add(this.textBoxPrimeToForce);
+            this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(604, 341);
+            this.tabPage3.Size = new System.Drawing.Size(604, 227);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Brute-Force Product";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -155,7 +172,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MicroSquare", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 160);
+            this.label5.Location = new System.Drawing.Point(7, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(172, 25);
             this.label5.TabIndex = 3;
@@ -164,17 +181,88 @@
             // textBoxIsPrime
             // 
             this.textBoxIsPrime.Font = new System.Drawing.Font("MicroSquare", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIsPrime.Location = new System.Drawing.Point(187, 157);
+            this.textBoxIsPrime.Location = new System.Drawing.Point(185, 102);
             this.textBoxIsPrime.Name = "textBoxIsPrime";
             this.textBoxIsPrime.ReadOnly = true;
             this.textBoxIsPrime.Size = new System.Drawing.Size(124, 32);
             this.textBoxIsPrime.TabIndex = 4;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Product To Solve";
+            // 
+            // textBoxPrimeToForce
+            // 
+            this.textBoxPrimeToForce.Location = new System.Drawing.Point(3, 21);
+            this.textBoxPrimeToForce.Name = "textBoxPrimeToForce";
+            this.textBoxPrimeToForce.Size = new System.Drawing.Size(598, 20);
+            this.textBoxPrimeToForce.TabIndex = 3;
+            // 
+            // buttonBruteForce
+            // 
+            this.buttonBruteForce.Font = new System.Drawing.Font("Pristina", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBruteForce.Location = new System.Drawing.Point(9, 71);
+            this.buttonBruteForce.Name = "buttonBruteForce";
+            this.buttonBruteForce.Size = new System.Drawing.Size(588, 50);
+            this.buttonBruteForce.TabIndex = 4;
+            this.buttonBruteForce.Text = "Bust That Prime!!!";
+            this.buttonBruteForce.UseVisualStyleBackColor = true;
+            this.buttonBruteForce.Click += new System.EventHandler(this.ButtonBruteForce_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("MicroSquare", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(7, 133);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(274, 30);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "The prime factors are:";
+            // 
+            // textBoxFactor1
+            // 
+            this.textBoxFactor1.Font = new System.Drawing.Font("MicroSquare", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFactor1.Location = new System.Drawing.Point(287, 130);
+            this.textBoxFactor1.Name = "textBoxFactor1";
+            this.textBoxFactor1.ReadOnly = true;
+            this.textBoxFactor1.Size = new System.Drawing.Size(129, 36);
+            this.textBoxFactor1.TabIndex = 6;
+            // 
+            // textBoxFactor2
+            // 
+            this.textBoxFactor2.Font = new System.Drawing.Font("MicroSquare", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFactor2.Location = new System.Drawing.Point(422, 130);
+            this.textBoxFactor2.Name = "textBoxFactor2";
+            this.textBoxFactor2.ReadOnly = true;
+            this.textBoxFactor2.Size = new System.Drawing.Size(129, 36);
+            this.textBoxFactor2.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(111, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Stop if factor reaches:";
+            // 
+            // textBoxFactorCeiling
+            // 
+            this.textBoxFactorCeiling.Location = new System.Drawing.Point(123, 45);
+            this.textBoxFactorCeiling.Name = "textBoxFactorCeiling";
+            this.textBoxFactorCeiling.Size = new System.Drawing.Size(471, 20);
+            this.textBoxFactorCeiling.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 391);
+            this.ClientSize = new System.Drawing.Size(636, 277);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
@@ -184,6 +272,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -202,6 +292,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxPrimeToCheck;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TextBox textBoxPrimeToForce;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonBruteForce;
+        private System.Windows.Forms.TextBox textBoxFactor2;
+        private System.Windows.Forms.TextBox textBoxFactor1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxFactorCeiling;
+        private System.Windows.Forms.Label label8;
     }
 }
 
